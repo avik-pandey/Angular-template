@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AdminLTE';
+  constructor(private router:  Router){
+
+  }
+  ngOnInit(){
+  localStorage.setItem('key', 'test');
+  if(localStorage.getItem('key') == 'test'){
+    this.router.navigate(['/members']);
+  }
+  }
 }

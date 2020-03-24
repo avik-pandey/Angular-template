@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {LayoutModule} from './modules/layout/layout.module';
 import {AuthGuard} from './modules/auth/auth-guard.service';
 import {AuthService} from './modules/auth/auth.service';
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,4 +20,13 @@ import {AuthService} from './modules/auth/auth.service';
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+  Servicedata:boolean;
+  constructor(private router:Router){
+
+  }
+  
+ 
+ }

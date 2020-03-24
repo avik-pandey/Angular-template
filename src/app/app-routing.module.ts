@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { AuthGuard} from './modules/auth/auth-guard.service';
-
+import { AuthService} from './modules/auth/auth.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -10,8 +10,24 @@ const routes: Routes = [
   
 ];
 
+// console.log("testing");
+console.log(localStorage.getItem('key'));
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+  constructor(private router:Router){
+
+  }
+  
+  ngOnInit() {
+    if(localStorage.getItem('key') == 'test'){
+      console.log(localStorage.getItem('key'));
+      this.router.navigate(['/members']);
+    }
+    console.log(localStorage.getItem('key'));
+  }
+ }
