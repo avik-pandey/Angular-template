@@ -12,9 +12,10 @@ export class AppComponent {
 
   }
   ngOnInit(){
-  localStorage.setItem('key', 'test');
-  if(localStorage.getItem('key') == 'test'){
-    this.router.navigate(['/members']);
-  }
+  // localStorage.setItem('key', 'test');
+  // if(localStorage.getItem('key') == 'test'){
+  //   console.log('meembers');
+  //   this.router.navigate(['/members']);
+  // }
   }
 }

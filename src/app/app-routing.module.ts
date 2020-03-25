@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 // console.log("testing");
-console.log(localStorage.getItem('key'));
+// console.log(localStorage.getItem('key'));
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -24,10 +24,12 @@ export class AppRoutingModule {
   }
   
   ngOnInit() {
-    if(localStorage.getItem('key') == 'test'){
-      console.log(localStorage.getItem('key'));
-      this.router.navigate(['/members']);
-    }
-    console.log(localStorage.getItem('key'));
+    // if(localStorage.getItem('key') == 'test'){
+    //   console.log(localStorage.getItem('key'));
+    //   console.log('pllllzzz');
+    //   this.router.navigate(['/members']);
+    // }
+    // console.log(localStorage.getItem('key'));
+    // console.log('pooooll');
   }
  }

@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login(){
-    console.log("ok");
+    // console.log("ok");
+    localStorage.setItem('key', 'test');
     this._authservice.login(); 
     this.router.navigate(['/members']);  
   }
