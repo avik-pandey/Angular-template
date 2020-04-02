@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>manufacturer</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.599999964">
+        <g id="manufacturer" fill-rule="nonzero">
+            <polygon id="Shape" fill="#A0C1C6" points="256 285 216 398.5 256 512 332 512 362 285"></polygon>
+            <polygon id="Shape" fill="#CFE0E3" points="256 285 256 512 180 512 150 285"></polygon>
+            <polygon id="Shape" fill="#A0C1C6" points="60 190 60 135 90 105 120 135 120 190"></polygon>
+            <rect id="Rectangle-path" fill="#CFE0E3" x="60" y="0" width="60" height="135"></rect>
+            <polygon id="Shape" fill="#41828D" points="90 165 60 255 150 255 150 165"></polygon>
+            <rect id="Rectangle-path" fill="#70A2AA" x="30" y="165" width="60" height="90"></rect>
+            <polygon id="Shape" fill="#0D4A55" points="180 225 180 512 90 512 60 368.5 90 225"></polygon>
+            <rect id="Rectangle-path" fill="#41828D" x="0" y="225" width="90" height="287"></rect>
+            <rect id="Rectangle-path" fill="#116371" x="30" y="255" width="30" height="30"></rect>
+            <rect id="Rectangle-path" fill="#000E0F" x="120" y="255" width="30" height="30"></rect>
+            <rect id="Rectangle-path" fill="#116371" x="30" y="315" width="30" height="30"></rect>
+            <rect id="Rectangle-path" fill="#000E0F" x="120" y="315" width="30" height="30"></rect>
+            <polygon id="Shape" fill="#A0C1C6" points="392 190 392 135 422 105 452 135 452 190"></polygon>
+            <rect id="Rectangle-path" fill="#CFE0E3" x="392" y="0" width="60" height="135"></rect>
+            <polygon id="Shape" fill="#41828D" points="422 165 392 255 482 255 482 165"></polygon>
+            <rect id="Rectangle-path" fill="#70A2AA" x="362" y="165" width="60" height="90"></rect>
+            <polygon id="Shape" fill="#0D4A55" points="512 225 512 512 422 512 392 368.5 422 225"></polygon>
+            <rect id="Rectangle-path" fill="#41828D" x="332" y="225" width="90" height="287"></rect>
+            <rect id="Rectangle-path" fill="#116371" x="362" y="255" width="30" height="30"></rect>
+            <rect id="Rectangle-path" fill="#000E0F" x="452" y="255" width="30" height="30"></rect>
+            <rect id="Rectangle-path" fill="#116371" x="362" y="315" width="30" height="30"></rect>
+            <rect id="Rectangle-path" fill="#000E0F" x="452" y="315" width="30" height="30"></rect>
+        </g>
+    </g>
+</svg>

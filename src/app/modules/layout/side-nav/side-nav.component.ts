@@ -7,7 +7,7 @@ declare var $;
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss']
+  styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit {
 
@@ -21,9 +21,9 @@ export class SideNavComponent implements OnInit {
       $('.sidebar-menu').tree();
     });
 
-    this.menu = this.__fetch.getSideNav();
-    console.log(this.menu[0]);
+    // this.menu = this.__fetch.getSideNav();
+    // console.log(this.menu[0]);
   }
-s
+
 
 }
