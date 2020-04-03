@@ -1,51 +1,35 @@
-<div class="container" style = 'background-image: url("../../assets/images/bg.jpg");'>
-<div class="login-box">
-  <div class="login-logo">
-    <div class="row">
-      <div class="col-xs-12">
-          <img src="" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-          <img src="../../assets/images/deepviewlarge.png" alt="">
-      </div>
-    </div>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Login</p>
-
-     <form #loginForm="ngForm" (ngSubmit)="submitCredentials(loginForm)">
-      <div class="form-group has-feedback">
-        <input class="form-control" placeholder="username" name ="Username" type="email" #Username = "ngModel">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input class="form-control" placeholder="password" name = "password" type="password" #password = "ngModel">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      
+<div class="container" style='background-image: url("../../assets/images/bg.jpg");'>
+  <div class="login-box">
+    <div class="login-logo">
       <div class="row">
-        
-        <!-- /.col -->
         <div class="col-xs-12">
-          <button class="btn btn-success btn-block btn-flat" (click) = login()>Sign In</button>
+          <img src="" alt="">
         </div>
-        
-        <!-- /.col -->
       </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img src="../../assets/images/deepviewlarge.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="login-box-body">
+      <p class="login-box-msg">Login</p>
+      <form #loginForm="ngForm" (ngSubmit)="submitCredentials(loginForm)">
+        <div class="form-group has-feedback">
+          <input class="form-control" placeholder="username" name="Username" type="email" ngModel #Username="ngModel">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input class="form-control" placeholder="password" name="password" type="password" ngModel #password="ngModel">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-success btn-block btn-flat" (click)=login()>Sign In</button>
+          </div>
+        </div>
       </form>
-
-
-    
-    <!-- /.social-auth-links -->
-
-   
-    <a [routerLink]="'/login/register'" class="text-center" style = "color:green;">Register a new membership</a>
-
+      <a [routerLink]="'/login/register'" class="text-center" style="color:green;">Register a new membership</a>
+    </div>
   </div>
-  <!-- /.login-box-body -->
 </div>
-</div>
-
