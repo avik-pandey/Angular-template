@@ -25,18 +25,31 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.login();
   }
 
   login() {
-    this.router.navigate(['/members']);
+    console.log('ok');
+    this._loginService.sessionStatus()
+       .subscribe((res:any) => {
+          console.log(res);
+       });
+
+    // this.router.navigate(['/members']);
   }
 
   submitCredentials(loginForm: NgForm) {
     this.loginCred = new enquiry(loginForm.value['Username'], loginForm.value['password']);
+    console.log(this.loginCred);
     this._loginService.loginStatus(this.loginCred)
       .subscribe(
         data => {
+          
           loginForm.reset();
+          if (Object.keys(data).length !== 0 && data.constructor === Object) {
+            this._loginService.getSideNav(data);
+            this.router.navigate(['/members']);
+          }
         },
         error => {
           console.log("error", error)

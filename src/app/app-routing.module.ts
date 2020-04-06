@@ -6,10 +6,10 @@ import { AuthService} from './modules/auth/auth.service';
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)},
-  {path: 'members', canActivate : [AuthGuard],loadChildren: () => import('./modules/pages/pages.module').then(m => m.PagesModule)},
+  {path: 'members',loadChildren: () => import('./modules/pages/pages.module').then(m => m.PagesModule)},
   
 ];
-
+//, canActivate : [AuthGuard]
 // console.log("testing");
 // console.log(localStorage.getItem('key'));
 

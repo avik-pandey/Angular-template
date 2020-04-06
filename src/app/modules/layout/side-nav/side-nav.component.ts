@@ -11,7 +11,7 @@ declare var $;
 })
 export class SideNavComponent implements OnInit {
 
-  menu:any = [];
+  sideNav:any;
 
   constructor( private __fetch:FetchSideNavService,private route: Router) {
   }
@@ -20,10 +20,27 @@ export class SideNavComponent implements OnInit {
     $(document).ready(() => {
       $('.sidebar-menu').tree();
     });
-
+    // this.showMenu();
+    this.showMenu();
     // this.menu = this.__fetch.getSideNav();
     // console.log(this.menu[0]);
   }
+
+  showMenu(){
+    // this.__fetch.sessionStatus()
+    //       .subscribe((res) => {
+    //           console.log(res);
+    //       });
+    this.sideNav = this.__fetch.fetchSideNav();
+    console.log(this.sideNav);
+  }
+
+  // fake(){
+  //   this.__fetch.loginStatus()
+  //        .subscribe((res) => {
+  //            console.log(res);
+  //        });
+  // }
 
 
 }

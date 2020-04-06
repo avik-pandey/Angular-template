@@ -17,6 +17,9 @@ export class FetchSideNavService {
 
   private checkSessionUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/login/check_session";
   private loginUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/login";
+  private logoutUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/login/clear_session";
+
+  sideNav:any;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -31,4 +34,17 @@ export class FetchSideNavService {
   sessionStatus(): Observable<any>{
     return this.http.get<any>(this.checkSessionUrl);
   }
+
+  logoutStatus(): Observable<any>{
+    return this.http.get<any>(this.logoutUrl);
+  }
+  
+  getSideNav(res:any){
+    this.getSideNav = res;
+  }
+
+  fetchSideNav(){
+    return this.getSideNav;
+  }
+
 }
