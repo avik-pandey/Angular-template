@@ -27,20 +27,15 @@ export class SideNavComponent implements OnInit {
   }
 
   showMenu(){
-    // this.__fetch.sessionStatus()
-    //       .subscribe((res) => {
-    //           console.log(res);
-    //       });
-    this.sideNav = this.__fetch.fetchSideNav();
-    console.log(this.sideNav);
+    this.__fetch.sessionStatus()
+          .subscribe((res) => {
+              console.log(res);
+          });
+    // this.sideNav = this.__fetch.fetchSideNav();
+    // console.log(this.sideNav);
   }
 
-  // fake(){
-  //   this.__fetch.loginStatus()
-  //        .subscribe((res) => {
-  //            console.log(res);
-  //        });
-  // }
+  
 
 
 }

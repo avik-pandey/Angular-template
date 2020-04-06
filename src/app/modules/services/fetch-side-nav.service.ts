@@ -28,15 +28,21 @@ export class FetchSideNavService {
   // }
 
   loginStatus(Enquiry : enquiry){
-    return this.http.post(this.loginUrl , Enquiry);
+    return this.http.post(this.loginUrl , Enquiry ,{
+      withCredentials: true // -===> important
+    });
   }
 
-  sessionStatus(): Observable<any>{
-    return this.http.get<any>(this.checkSessionUrl);
+  sessionStatus(){
+    return this.http.get(this.checkSessionUrl,{
+      withCredentials: true // -===> important
+    });
   }
 
-  logoutStatus(): Observable<any>{
-    return this.http.get<any>(this.logoutUrl);
+  logoutStatus(){
+    return this.http.get(this.logoutUrl,{
+      withCredentials: true // -===> important
+    });
   }
   
   getSideNav(res:any){
