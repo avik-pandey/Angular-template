@@ -29,11 +29,14 @@ export class SideNavComponent implements OnInit {
   showMenu(){
     this.__fetch.sessionStatus()
           .subscribe((res) => {
-              console.log(res);
+              this.sideNav  = res;
           });
+          
     // this.sideNav = this.__fetch.fetchSideNav();
     // console.log(this.sideNav);
   }
+
+
 
   
 

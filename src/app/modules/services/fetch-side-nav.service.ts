@@ -15,9 +15,9 @@ export class FetchSideNavService {
   //   {"Name":"Power","url":"/power"}
   // ]}];
 
-  private checkSessionUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/login/check_session";
-  private loginUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/login";
-  private logoutUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/login/clear_session";
+  private checkSessionUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/login/check_session";
+  private loginUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/login";
+  private logoutUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/login/clear_session";
 
   sideNav:any;
 

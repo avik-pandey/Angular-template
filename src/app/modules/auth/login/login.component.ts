@@ -13,7 +13,7 @@ declare var $;
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
 
   loginCred: any;
 
@@ -22,17 +22,23 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-  }
-
-  ngOnDestroy(): void {
     this.login();
   }
 
+  // ngOnDestroy(): void {
+  //   this.login();
+  // }
+
   login() {
-    console.log('ok');
+    // console.log('ok');
     this._loginService.sessionStatus()
        .subscribe((res:any) => {
+         console.log('above');
+        if (Object.keys(res).length !== 0 && res.constructor === Object) {
           console.log(res);
+          this.router.navigate(['/members']);
+
+        }
        });
 
     // this.router.navigate(['/members']);
