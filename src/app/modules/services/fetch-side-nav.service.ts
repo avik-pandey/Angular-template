@@ -14,12 +14,10 @@ export class FetchSideNavService {
   //   {"Name":"Energy","url":"/energy"},
   //   {"Name":"Power","url":"/power"}
   // ]}];
+  private baseUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/";
+  
 
-  private checkSessionUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/login/check_session";
-  private loginUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/login";
-  private logoutUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/login/clear_session";
-
-  sideNav:any;
+  sideNav = {};
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -28,19 +26,19 @@ export class FetchSideNavService {
   // }
 
   loginStatus(Enquiry : enquiry){
-    return this.http.post(this.loginUrl , Enquiry ,{
+    return this.http.post(this.baseUrl + "login" , Enquiry ,{
       withCredentials: true // -===> important
     });
   }
 
   sessionStatus(){
-    return this.http.get(this.checkSessionUrl,{
+    return this.http.get(this.baseUrl + "login/check_session",{
       withCredentials: true // -===> important
     });
   }
 
   logoutStatus(){
-    return this.http.get(this.logoutUrl,{
+    return this.http.get(this.baseUrl + "login/clear_session",{
       withCredentials: true // -===> important
     });
   }

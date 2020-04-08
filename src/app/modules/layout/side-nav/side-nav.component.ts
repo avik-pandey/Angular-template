@@ -11,7 +11,7 @@ declare var $;
 })
 export class SideNavComponent implements OnInit {
 
-  sideNav:any;
+  sideNav = {};
 
   constructor( private __fetch:FetchSideNavService,private route: Router) {
   }

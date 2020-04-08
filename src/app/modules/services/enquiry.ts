@@ -1,6 +1,6 @@
 export class enquiry{
     constructor(
         public Username:string,
-        public password:string
+        public Password:string
     ){}
  }

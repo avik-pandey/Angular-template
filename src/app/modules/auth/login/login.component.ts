@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
   login() {
     // console.log('ok');
     this._loginService.sessionStatus()
-       .subscribe((res:any) => {
+       .subscribe((res:{}) => {
          console.log('above');
-        if (Object.keys(res).length !== 0 && res.constructor === Object) {
+        if (!('status' in res)) {
           console.log(res);
           this.router.navigate(['/members']);
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   }
 
   submitCredentials(loginForm: NgForm) {
-    this.loginCred = new enquiry(loginForm.value['Username'], loginForm.value['password']);
+    this.loginCred = new enquiry(loginForm.value['Username'], loginForm.value['Password']);
     console.log(this.loginCred);
     this._loginService.loginStatus(this.loginCred)
       .subscribe(
