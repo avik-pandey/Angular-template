@@ -32,8 +32,6 @@ export class SideNavComponent implements OnInit {
               this.sideNav  = res;
           });
           
-    // this.sideNav = this.__fetch.fetchSideNav();
-    // console.log(this.sideNav);
   }
 
   goToMenu(name){

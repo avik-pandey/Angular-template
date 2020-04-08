@@ -15,6 +15,7 @@ export class FetchSideNavService {
   //   {"Name":"Power","url":"/power"}
   // ]}];
   private baseUrl:string = "http://rwtestadminui.azurewebsites.net/api/avik/";
+  private systemBaseUrl:string = "http://rwtestadminui.azurewebsites.net/api/v1/";
   
 
   sideNav = {};
@@ -41,6 +42,14 @@ export class FetchSideNavService {
     return this.http.get(this.baseUrl + "login/clear_session",{
       withCredentials: true // -===> important
     });
+  }
+
+  systemAggregation(){
+    return this.http.get(this.systemBaseUrl + "aggregation_job_lable",{ withCredentials: true });
+  }
+
+  systemMonitor(){
+    return this.http.get(this.systemBaseUrl + "monitor",{ withCredentials: true });
   }
   
   getSideNav(res:any){

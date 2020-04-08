@@ -1,1 +1,47 @@
-<p>system-health works!</p>
+<div class="row">
+    <div class="col-12">
+        <p>system-health</p> 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12" *ngFor = "let device of boxDevices">
+
+    {{device.DatabaseKey}}
+
+         <div class="row">
+             <div class="col-sm-3 col-12" *ngFor = "let data of boxData" >
+
+                <div class="card" style="width: 25rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" *ngIf = "data.Type == 'Y'">Yearly Job</h5>
+                      <h5 class="card-title" *ngIf = "data.Type == 'H'">Hourly Job</h5>
+                      <h5 class="card-title" *ngIf = "data.Type == 'D'">Daily Job</h5>
+                      <h5 class="card-title" *ngIf = "data.Type == 'M'">Monthly Job</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Processed till 07-04-2020 23:10:12</h6>
+                      <div class="row">
+                          <div class="col-12">
+                            <p>Job started on</p>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                            <p>Job ended on</p>
+                        </div>
+                    </div>
+                      <div class="row">
+                          <div class="col-sm-6"></div>
+                          <div class="col-sm-6">
+                              {{data.Label}}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+             </div>
+         </div>
+
+    </div>
+</div>
+<!--  -->
+
