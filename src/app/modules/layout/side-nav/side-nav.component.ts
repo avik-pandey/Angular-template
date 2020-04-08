@@ -38,7 +38,7 @@ export class SideNavComponent implements OnInit {
 
   goToMenu(name){
     console.log(name);
-    this.route.navigate(['members',name]);
+    this.route.navigate(['members/'+name]);
   }
 
 

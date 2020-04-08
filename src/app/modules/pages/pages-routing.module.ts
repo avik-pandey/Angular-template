@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',component: PagesComponent, children: [
       {path: '', component: DashBoardComponent},
-      {path: 'members/:name', component: SystemHealthComponent},
+      {path: 'SYSTEMHEALTH', component: SystemHealthComponent},
     ]
   }
 ];
