@@ -1,47 +1,141 @@
 <div class="row">
     <div class="col-12">
-        <p>system-health</p> 
+        <p>system-health</p>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-12" *ngFor = "let device of boxDevices">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-sm-3 col-12" *ngFor="let device of boxDevices">
+                {{device.DatabaseKey}}
+            </div>
+            <div class="col-sm-6 col-12"></div>
+            <div class="col-sm-3 col-12" *ngFor = "let sms of cntSms">
+                Unsent email:{{sms.UnsentEmailCount}} Unsent sms:{{sms.UnsentSMSCount}}
 
-    {{device.DatabaseKey}}
+            </div>
 
-         <div class="row">
-             <div class="col-sm-3 col-12" *ngFor = "let data of boxData" >
+            <div class="row">
+                <div class="col-sm-3 col-12" *ngFor="let data of boxData">
+    
+                    <div class="card" style="width: 25rem;">
+                        <div class="card-body">
+                            <h5 class="card-title" *ngIf="data.Type == 'Y'">Yearly Job</h5>
+                            <h5 class="card-title" *ngIf="data.Type == 'H'">Hourly Job</h5>
+                            <h5 class="card-title" *ngIf="data.Type == 'D'">Daily Job</h5>
+                            <h5 class="card-title" *ngIf="data.Type == 'M'">Monthly Job</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Processed till 07-04-2020 23:10:12</h6>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Job started on</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Job ended on</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6">
+                                    {{data.Label}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-sm-3 col-12" *ngFor="let data of boxData">
 
                 <div class="card" style="width: 25rem;">
                     <div class="card-body">
-                      <h5 class="card-title" *ngIf = "data.Type == 'Y'">Yearly Job</h5>
-                      <h5 class="card-title" *ngIf = "data.Type == 'H'">Hourly Job</h5>
-                      <h5 class="card-title" *ngIf = "data.Type == 'D'">Daily Job</h5>
-                      <h5 class="card-title" *ngIf = "data.Type == 'M'">Monthly Job</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Processed till 07-04-2020 23:10:12</h6>
-                      <div class="row">
-                          <div class="col-12">
-                            <p>Job started on</p>
-                          </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12">
-                            <p>Job ended on</p>
+                        <h5 class="card-title" *ngIf="data.Type == 'Y'">Yearly Job</h5>
+                        <h5 class="card-title" *ngIf="data.Type == 'H'">Hourly Job</h5>
+                        <h5 class="card-title" *ngIf="data.Type == 'D'">Daily Job</h5>
+                        <h5 class="card-title" *ngIf="data.Type == 'M'">Monthly Job</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Processed till 07-04-2020 23:10:12</h6>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Job started on</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Job ended on</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6">
+                                {{data.Label}}
+                            </div>
                         </div>
                     </div>
-                      <div class="row">
-                          <div class="col-sm-6"></div>
-                          <div class="col-sm-6">
-                              {{data.Label}}
-                          </div>
-                      </div>
-                    </div>
-                  </div>
+                </div>
 
-             </div>
-         </div>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12" *ngFor="let device of boxDevices">
+        <b>Devices For Database - {{device.DatabaseKey}}</b>
+
+        <div class="row">
+            <div class="col-sm-3 col-12" *ngFor="let content of devicesContent">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Test Customer / Test Facility</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    Test RightBox 2 (2)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    {{content.DeviceName}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="padding-top: 20px;">
+    <div class="col-sm-4">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" *ngFor="let customer of dropDownCustomer">{{customer.CompanyName}}</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
 
     </div>
 </div>
 <!--  -->
-

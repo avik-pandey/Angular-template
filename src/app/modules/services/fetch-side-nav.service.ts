@@ -52,6 +52,17 @@ export class FetchSideNavService {
     return this.http.get(this.systemBaseUrl + "monitor",{ withCredentials: true });
   }
   
+  systemDevices(){
+    return this.http.get(this.systemBaseUrl + "permission_data/customer/1/facility",{ withCredentials: true });
+  }
+
+  systemCustomer(){
+    return this.http.get(this.systemBaseUrl + "permission_data/customer",{ withCredentials: true });
+  }
+
+  systemCntSMS(){
+    return this.http.get(this.systemBaseUrl + "monitor/unsent_email_sms_job_status",{ withCredentials: true });
+  }
   getSideNav(res:any){
     this.getSideNav = res;
   }

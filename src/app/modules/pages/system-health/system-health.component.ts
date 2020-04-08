@@ -14,10 +14,17 @@ export class SystemHealthComponent implements OnInit {
 
     this.showBoxData();
     this.showDevices();
+    this.showDeviceContent();
+    this.showCustomer();
+    this.cntSMS();
   }
 
   boxData:any;
   boxDevices:any;
+
+  devicesContent:any;
+  dropDownCustomer:any;
+  cntSms:any;
 
   showBoxData(){
     this.__fetch.systemAggregation()
@@ -34,6 +41,34 @@ export class SystemHealthComponent implements OnInit {
             // console.log(res);
               this.boxDevices  = res;
           });
+  }
+
+  showDeviceContent(){
+    this.__fetch.systemDevices()
+          .subscribe((res) => {
+            console.log(res);
+             this.devicesContent = res[0].devices;
+          });
+  }
+
+  showCustomer(){
+
+    this.__fetch.systemCustomer()
+          .subscribe((res) => {
+             console.log(res);
+             this.dropDownCustomer = res;
+          });
+
+  }
+
+  cntSMS(){
+
+    this.__fetch.systemCntSMS()
+          .subscribe((res) => {
+             console.log(res);
+             this.cntSms = res;
+          });
+       
   }
 
 }
