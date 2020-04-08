@@ -30,7 +30,7 @@
     
       <!-- *ngIf = "Object.keys(menu.submenus).length > 0" -->
       <li class="treeview" *ngFor = "let menu of sideNav.menus">
-        <a href="#">
+        <a href="#" (click) = "goToMenu(menu.name)">
           <i class="fa fa-pie-chart"></i>
           <span>{{menu.name}}</span>
           <span class="pull-right-container" >
