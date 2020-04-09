@@ -25,6 +25,7 @@ export class SystemHealthComponent implements OnInit {
   devicesContent:any;
   dropDownCustomer:any;
   cntSms:any;
+  facility:any;
 
   showBoxData(){
     this.__fetch.systemAggregation()
@@ -47,6 +48,7 @@ export class SystemHealthComponent implements OnInit {
     this.__fetch.systemDevices()
           .subscribe((res) => {
             console.log(res);
+            this.facility = res;
              this.devicesContent = res[0].devices;
           });
   }
@@ -69,6 +71,14 @@ export class SystemHealthComponent implements OnInit {
              this.cntSms = res;
           });
        
+  }
+
+  faciltySubmit(){
+
+    this.__fetch.systemMonitorFacilty()
+          .subscribe((res) => {
+
+          });
   }
 
 }

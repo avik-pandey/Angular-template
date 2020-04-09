@@ -63,6 +63,10 @@ export class FetchSideNavService {
   systemCntSMS(){
     return this.http.get(this.systemBaseUrl + "monitor/unsent_email_sms_job_status",{ withCredentials: true });
   }
+
+  systemMonitorFacilty(){
+    return this.http.get(this.systemBaseUrl + "monitor/facility",{ withCredentials: true });
+  }
   getSideNav(res:any){
     this.getSideNav = res;
   }

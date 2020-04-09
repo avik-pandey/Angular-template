@@ -123,19 +123,43 @@
 
 <div class="row" style="padding-top: 20px;">
     <div class="col-sm-4">
+        <b>Default Customer</b>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown button
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#" *ngFor="let customer of dropDownCustomer">{{customer.CompanyName}}</a>
+                <a class="dropdown-item" href="#" *ngFor="let customer of dropDownCustomer" (click) = showDevices()>{{customer.CompanyName}}</a>
 
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
+        <b>Default Facility</b>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" >{{facility.FacilityName}}</a>
 
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-success" (click) = facilitySubmit()>Submit</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <p>
+            <b>Green:</b> < 2*Monitoring Frequency in seconds. <b>Amber:</b> > 2*Monitoring Frequency in seconds and < 3*Monitoring Frequency in seconds. <b>Red:</b> > 3*Monitoring Frequency in seconds.</p>
     </div>
 </div>
 <!--  -->
